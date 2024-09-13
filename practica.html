@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-size: 18px; 
+            margin: 0;  
+            background-color: #8e8a8a; 
+        }
+
+
+        .cv-container {
+            width: 210mm; 
+            height: 297mm; 
+            background-color: #fff; 
+            padding: 20mm; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+            box-sizing: border-box; 
+            overflow: hidden; 
+            position: relative; 
+        }
+
+
+        .cv-header {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            background-color: #b0b0b0;
+            padding: 10mm; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1; 
+        }
+
+        /* Imagen en la cabecera */
+        .cv-header img {
+            width: 50mm;
+            height: 50mm;
+            border-radius: 50%;
+            object-fit: cover;
+            float: left; 
+            margin-right: 10mm; /* Espacio entre la imagen y el texto */
+        }
+
+   
+        .cv-header .info {
+            overflow: hidden; /* Para que el texto no se desborde */
+        }
+
+        .cv-header h1, .cv-header h2 {
+            margin: 0;
+            color: #333;
+            font-weight: bold; /* Texto en negrita */
+        }
+
+  
+        .content {
+            display: grid;
+            grid-template-columns: 2fr 3fr; 
+            grid-gap: 20px; 
+            margin-top: 60mm; /* Espacio para la cabecera */
+            position: relative; 
+            z-index: 0; 
+        }
+
+        .left-column {
+            display: grid;
+            grid-template-rows: repeat(5, auto); 
+            background-color: #fff; 
+            padding: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+            border-radius: 5px; 
+            
+        }
+
+        /* Columna derecha */
+        .right-column {
+            display: grid;
+            grid-template-rows: repeat(5, auto); 
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+            border-radius: 5px; 
+        }
+
+        /* Texto en la columna izquierda */
+        .left-column div {
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            font-weight: bold; 
+        }
+
+        /* Texto en la columna derecha */
+        .right-column div {
+            margin-bottom: 10px; 
+            font-size: 0.9em; 
+            font-weight: bold;
+        }
+
+        h3 {
+            margin-top: 0;
+            color: #333;
+            position: relative;
+            font-weight: bold; 
+        }
+
+      
+        h3.with-underline::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px; 
+            background: #333; 
+            position: absolute;
+            bottom: -5px; 
+            left: 0;
+        }
+
+   
+        .subtitulo {
+            font-size: 1.2em; 
+            font-weight: bold; 
+            margin-bottom: 10px;
+            color: #333;
+            text-transform: none; 
+            text-decoration: none; 
+            position: relative;
+        }
+
+
+
+        ul {
+            list-style-type: disc; 
+            margin: 0; 
+            padding-left: 20px; 
+        }
+
+        li {
+            margin-bottom: 5px; 
+            font-weight: normal; 
+            font-size: 0.8em; 
+        }    
+
+
+
+        .right-column p ,.left-column p {
+            font-size: 0.8em; 
+            line-height: 1.2; 
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .right-column li {
+            font-size: 0.7em; 
+            line-height: 1.2; 
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .right-column h3 {
+            text-transform: none; 
+            text-decoration: none;
+        }
+        .hdiminuto {
+            margin-top: 0;
+            color: #333;
+            position: relative; 
+            font-weight: bold; 
+        }
+
+        h5 {
+            
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 1.0em; /
+            font-weight: bold;
+            color: #333;
+
+            font-weight: bold; 
+        }
+
+        h1 {
+            line-height: 0.8;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 0.9em; 
+            font-weight: bold;
+            color: #333;
+
+            font-weight: bold; /
+        }
+
+    .year {
+        font-weight: normal; 
+        color: #7f8c8d; 
+        font-size: 0.9em; 
+    }
+        
+
+    </style>
+</head>
+<body>
+
+
+    <div class="cv-container">
+
+        <div class="cv-header">
+            <img src="foto" alt="Foto Persona">
+            <div class="info">
+                <h1>José Martínez</h1>
+                <h2>PUESTO / BUSCADO</h2>
+            </div>
+        </div>
+
+
+        <div class="content">
+
+            <div class="left-column div">
+                <div>
+                    <h3 class="with-underline">CONTACTO</h3>
+                    <p>jose.martinez@gnail.com</p>
+                    <p>Mexico DF</p>
+                    <p>linkedin.com/jose-martinez</p>
+                </div>
+                <div>
+                    <h3 class="with-underline">IDIOMAS</h3>
+                    <p>Español: Nativo</p>
+                    <p>Inglés: Bilingue(TOEIC 950)</p>
+                    <p>Francés: Intermedio</p>
+                </div>
+                <div>
+                    <h3 class="with-underline">APTITUDES</h3>
+                    <li>Inteligencia emocional</li>
+                    <li>Espíritu crítico</li>
+                    <li>Trabajo en equipo</li>
+                    <li>Capacidad analítica</li>
+                    <li>Habilidades físicas</li>
+                </div>
+                <div>
+                    <h3 class="with-underline">HABILIDADES</h3>
+                    <li>Acondicionamiento físico</li>
+                    <li>Creación videos deportivos</li>
+                    <li>Pack office</li>
+                    <li>Tenis</li>
+                </div>
+                <div>
+                    <h3 class="with-underline">OTROS INTERESES</h3>
+                    <ul>
+                        <li>Creador de yincanas</li>
+                        <li>Paseos ecológicos</li>
+                        <li>Lectura grupal en inglés</li>
+                    </ul>           
+                </div>
+            </div>
+
+       
+            <div class="right-column">
+                <div>
+                    <h3 class="with-underline">PERFIL</h3>
+                    <p>Trabajador Social con 4 años de experiencia en proyectos colectivos. 
+                        Mi objetivo es lograr que los jovenes tengan acceso a la educacion superior 
+                        mediante logros deportivos.</p>
+
+                </div>
+                <div>
+                    <h3 class="with-underline">EXPERIENCIA LABORAL</h3>
+
+                    <h5 class="with-underline">Trabajador Social</h5>
+                    <h1 class="with-underline"><em> Mexico   </em>,DF <span class="year">|  2022 - actualmente</span>   </h1>
+
+                    <li>Coordinador y mediador entre los equipos de la ayuda psicologica a jovenes y niños en exclusion social.</li>
+                    <li>Velar por la salud mental de mi equipo y de miembros involucrados en proyectos.</li>
+                    <li>Mapeo de necesidades estrategicas y logicsticas para diferentes areas.</li>
+                    <li>Monitor de ejercicios fisicos para adolescentes.</li>    
+
+                    <h5 class="with-underline">Trabajador Social</h5>
+                    <h1 class="with-underline"><em> Mexico   </em>,DF <span class="year">|  2020 - 2022</span>   </h1>
+
+                    <li>Funciones para seguimientos de casos para jovenes con problemas de adicciones.</li>
+                    <li>Capacitaciones e integracion vinculadas a medidas preventivas.</li>
+                    <li>Recopilacion de evidencias para auditorias y programas sociales.</li>
+   
+
+                    <h5 class="with-underline">Trabajador Social</h5>  
+                    <h1 class="with-underline"><em> Zaragoza,  </em>, España  <span class="year">|  2019 - 2020</span>   </h1>
+
+                    <li>Profesor de lengua española e inglesa para jovenes migrantes.</li>
+                    <li>Monitor de actividades ecologicas con adolecentes.</li>
+                    <li>Coordinador de areas deportivas.</li>
+
+                    
+                </div>
+                <div>
+                    <h3 class="with-underline">FORMACION</h3>
+                    <h1 class="with-underline">Grado de Trabajo Social</h1>     
+                    <h1 class="with-underline"><em> ESMA  </em>, Madrid   <span class="year">|  2012 - 2015</span>   </h1>
+
+
+                    <h1 class="with-underline">Licenciatura Profesional</h1>     
+                    <h1 class="with-underline"><em> Universidad de la Frontera  </em>, Mexico DF <span class="year">|  2011 - 2012</span>   </h1>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
