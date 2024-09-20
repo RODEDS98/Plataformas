@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            font-size: 18px; 
+            margin: 0;  
+            background-color: #8e8a8a; 
+        }
+
+        .cv-container {
+            width: 210mm; 
+            height: 297mm; 
+            background-color: #fff; 
+            padding: 20mm; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+            box-sizing: border-box; 
+            overflow: hidden; 
+            position: relative; 
+        }
+
+        .cv-header {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            background-color: #b0b0b0;
+            padding: 10mm; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1; 
+        }
+
+        .cv-header img {
+            width: 50mm;
+            height: 50mm;
+            border-radius: 50%;
+            object-fit: cover;
+            float: left; 
+            margin-right: 10mm; 
+        }
+
+        .cv-header .info {
+            overflow: hidden; 
+        }
+
+        .cv-header h1, .cv-header h2 {
+            margin: 0;
+            color: #333;
+            font-weight: bold; 
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 2fr 3fr; 
+            grid-gap: 20px; 
+            margin-top: 60mm; 
+            position: relative; 
+            z-index: 0; 
+        }
+
+        .left-column, .right-column {
+            background-color: #fff; 
+            padding: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+            border-radius: 5px; 
+        }
+
+        h3 {
+            margin-top: 0;
+            color: #333;
+            position: relative;
+            font-weight: bold; 
+        }
+
+        h3.with-underline::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px; 
+            background: #333; 
+            position: absolute;
+            bottom: -5px; 
+            left: 0;
+        }
+
+        ul {
+            list-style-type: disc; 
+            margin: 0; 
+            padding-left: 20px; 
+        }
+
+        li {
+            margin-bottom: 5px; 
+            font-weight: normal; 
+            font-size: 0.8em; 
+        }    
+
+        .year {
+            font-weight: normal; 
+            color: #7f8c8d; 
+            font-size: 0.9em; 
+        }
+
+        .form-container {
+            width: 30%;
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 10px;
+            margin-left: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container input, .form-container select, .form-container textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .form-container label {
+            margin-top: 10px;
+            display: block;
+        }
+
+        .checkbox-group {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        <div class="cv-header">
+            <img src="foto" alt="Foto Persona" id="cv-foto">
+            <div class="info">
+                <h1 id="cv-nombre">José Martínez</h1>
+                <h2 id="cv-ocupacion">PUESTO / BUSCADO</h2>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="left-column">
+                <div>
+                    <h3 class="with-underline">CONTACTO</h3>
+                    <p id="cv-email">jose.martinez@gmail.com</p>
+                    <p id="cv-telefono">Teléfono</p>
+                    <p>Mexico DF</p>
+                    <p id="cv-linkedin">linkedin.com/jose-martinez</p>
+                </div>
+                <div>
+                    <h3 class="with-underline">IDIOMAS</h3>
+                    <p>Español: Nativo</p>
+                    <p>Inglés: Bilingüe (TOEIC 950)</p>
+                    <p>Francés: Intermedio</p>
+                </div>
+                <div>
+                    <h3 class="with-underline">APTITUDES</h3>
+                    <ul id="cv-aptitudes"></ul>
+                </div>
+                <div>
+                    <h3 class="with-underline">HABILIDADES</h3>
+                    <ul id="cv-habilidades"></ul>
+                </div>
+                <div>
+                    <h3 class="with-underline">OTROS INTERESES</h3>
+                    <ul>
+                        <li>Creador de yincanas</li>
+                        <li>Paseos ecológicos</li>
+                        <li>Lectura grupal en inglés</li>
+                    </ul>           
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div>
+                    <h3 class="with-underline">PERFIL</h3>
+                    <p id="cv-perfil">Trabajador Social con 4 años de experiencia en proyectos colectivos. Mi objetivo es lograr que los jóvenes tengan acceso a la educación superior mediante logros deportivos.</p>
+                </div>
+                <div>
+                    <h3 class="with-underline">EXPERIENCIA LABORAL</h3>
+                    <h5 class="with-underline">Trabajador Social</h5>
+                    <h1 class="with-underline"><em>Mexico</em>, DF <span class="year">| 2022 - actualmente</span></h1>
+                    <li>Coordinador y mediador entre los equipos de la ayuda psicológica a jóvenes y niños en exclusión social.</li>
+                    <li>Velar por la salud mental de mi equipo y de miembros involucrados en proyectos.</li>
+                    <li>Mapeo de necesidades estratégicas y logísticas para diferentes áreas.</li>
+                    <li>Monitor de ejercicios físicos para adolescentes.</li>    
+
+                    <h5 class="with-underline">Trabajador Social</h5>
+                    <h1 class="with-underline"><em>Mexico</em>, DF <span class="year">| 2020 - 2022</span></h1>
+                    <li>Funciones para seguimientos de casos para jóvenes con problemas de adicciones.</li>
+                    <li>Capacitaciones e integración vinculadas a medidas preventivas.</li>
+                    <li>Recopilación de evidencias para auditorías y programas sociales.</li>
+
+                    <h5 class="with-underline">Trabajador Social</h5>  
+                    <h1 class="with-underline"><em>Zaragoza</em>, España <span class="year">| 2019 - 2020</span></h1>
+                    <li>Profesor de lengua española e inglesa para jóvenes migrantes.</li>
+                    <li>Monitor de actividades ecológicas con adolescentes.</li>
+                    <li>Coordinador de áreas deportivas.</li>
+                </div>
+                <div>
+                    <h3 class="with-underline">FORMACIÓN</h3>
+                    <h1 class="with-underline">Grado de Trabajo Social</h1>     
+                    <h1 class="with-underline"><em>ESMA</em>, Madrid <span class="year">| 2012 - 2015</span></h1>
+                    <h1 class="with-underline">Licenciatura Profesional</h1>     
+                    <h1 class="with-underline"><em>Universidad de la Frontera</em>, Mexico DF <span class="year">| 2011 - 2012</span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <h2>Formulario de Datos</h2>
+        <form id="cv-form">
+            <label for="nombre">Nombre y Apellidos:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+
+            <label for="ocupacion">Ocupación:</label>
+            <input type="text" id="ocupacion" name="ocupacion" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="nacionalidad">Nacionalidad:</label>
+            <select id="nacionalidad" name="nacionalidad" required>
+                <option value="mexicana">Mexicana</option>
+                <option value="española">Española</option>
+                <option value="otro">Otro</option>
+            </select>
+
+            <label>Nivel de Inglés:</label>
+            <div>
+                <input type="radio" id="ingles-basico" name="nivel-ingles" value="básico" required>
+                <label for="ingles-basico">Básico</label>
+                <input type="radio" id="ingles-intermedio" name="nivel-ingles" value="intermedio">
+                <label for="ingles-intermedio">Intermedio</label>
+                <input type="radio" id="ingles-avanzado" name="nivel-ingles" value="avanzado">
+                <label for="ingles-avanzado">Avanzado</label>
+                <input type="radio" id="ingles-fluido" name="nivel-ingles" value="fluido">
+                <label for="ingles-fluido">Fluido</label>
+            </div>
+
+            <label for="lenguajes">Lenguajes de Programación:</label>
+            <select id="lenguajes" name="lenguajes" multiple>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+                <option value="php">PHP</option>
+            </select>
+
+            <label for="aptitudes">Aptitudes:</label>
+            <input list="aptitudes-list" id="aptitudes" name="aptitudes" placeholder="Selecciona aptitudes">
+            <datalist id="aptitudes-list">
+                <option value="Inteligencia emocional">
+                <option value="Trabajo en equipo">
+                <option value="Capacidad analítica">
+                <option value="Liderazgo">
+                <option value="Creatividad">
+            </datalist>
+
+            <label for="habilidades">Habilidades:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="habilidad1" name="habilidades" value="Acondicionamiento físico">
+                <label for="habilidad1">Acondicionamiento físico</label>
+                <input type="checkbox" id="habilidad2" name="habilidades" value="Creación de videos deportivos">
+                <label for="habilidad2">Creación de videos deportivos</label>
+                <input type="checkbox" id="habilidad3" name="habilidades" value="Pack office">
+                <label for="habilidad3">Pack office</label>
+                <input type="checkbox" id="habilidad4" name="habilidades" value="Tenis">
+                <label for="habilidad4">Tenis</label>
+            </div>
+
+            <label for="perfil">Perfil:</label>
+            <textarea id="perfil" name="perfil" rows="4" required></textarea>
+
+            <button type="submit">Actualizar CV</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('cv-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const ocupacion = document.getElementById('ocupacion').value;
+            const telefono = document.getElementById('telefono').value;
+            const email = document.getElementById('email').value;
+            const linkedin = document.getElementById('linkedin').value; // Este ID no estaba en el formulario, podrías eliminarlo si no es necesario
+            const nacionalidad = document.getElementById('nacionalidad').value;
+            const nivelIngles = document.querySelector('input[name="nivel-ingles"]:checked').value;
+            const lenguajes = Array.from(document.getElementById('lenguajes').selectedOptions).map(option => option.value).join(', ');
+            const aptitudes = document.getElementById('aptitudes').value;
+            const habilidades = Array.from(document.querySelectorAll('input[name="habilidades"]:checked')).map(checkbox => checkbox.value).join(', ');
+            const perfil = document.getElementById('perfil').value;
+
+            // Actualizar el CV con los nuevos valores
+            document.getElementById('cv-nombre').textContent = nombre;
+            document.getElementById('cv-ocupacion').textContent = ocupacion;
+            document.getElementById('cv-telefono').textContent = telefono;
+            document.getElementById('cv-email').textContent = email;
+            document.getElementById('cv-nacionalidad').textContent = nacionalidad;
+            document.getElementById('cv-nivel-ingles').textContent = nivelIngles;
+            document.getElementById('cv-lenguajes').textContent = lenguajes;
+            document.getElementById('cv-aptitudes').innerHTML = `<li>${aptitudes}</li>`;
+            document.getElementById('cv-habilidades').innerHTML = `<li>${habilidades}</li>`;
+            document.getElementById('cv-perfil').textContent = perfil;
+        });
+    </script>
+</body>
+</html>
