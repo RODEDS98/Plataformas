@@ -1,0 +1,59 @@
+CREATE TABLE experiencia_laboral (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    puesto VARCHAR(255),
+    empresa VARCHAR(255),
+    fecha_inicio DATE,
+    fecha_fin DATE,
+    descripcion TEXT
+);
+
+CREATE TABLE formacion (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255),
+    institucion VARCHAR(255),
+    fecha_inicio DATE,
+    fecha_fin DATE
+);
+
+CREATE TABLE idiomas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    idioma VARCHAR(255),
+    nivel VARCHAR(50)
+);
+
+CREATE TABLE aptitudes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    aptitud VARCHAR(255) UNIQUE -- Asegúrate de que no haya duplicados
+);
+
+CREATE TABLE habilidades (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    habilidad VARCHAR(255) UNIQUE -- Asegúrate de que no haya duplicados
+);
+
+CREATE TABLE usuario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255),
+    fecha_nacimiento DATE,
+    ocupacion VARCHAR(255),
+    telefono VARCHAR(20),
+    email VARCHAR(255),
+    nacionalidad VARCHAR(100),
+    nivel_ingles VARCHAR(50)
+);
+
+CREATE TABLE usuario_apto (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT,
+    aptitud_id INT,
+    FOREIGN KEY (usuario_id) REFERENCES usuario(id),
+    FOREIGN KEY (aptitud_id) REFERENCES aptitudes(id)
+);
+
+CREATE TABLE usuario_habilidad (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT,
+    habilidad_id INT,
+    FOREIGN KEY (usuario_id) REFERENCES usuario(id),
+    FOREIGN KEY (habilidad_id) REFERENCES habilidades(id)
+);
