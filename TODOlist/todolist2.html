@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>DBP</title>
+    <style>
+        body {
+            background-color: #d45d3e;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        #task {
+            border: 1px solid #d45d3e;
+            border-radius: 4px;
+            padding: 10px;
+            margin-right: 10px;
+            flex-grow: 1;
+        }
+
+        #delete-btn {
+            display: none;
+            margin-left: 10px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        ol {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px 0;
+        }
+
+        li {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            color: black;
+            justify-content: space-between;
+        }
+
+        #hello-btn {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .confirm-delete {
+            display: none;
+            margin-left: 10px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .action-button {
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 15px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .action-buttons {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('#new-task').onsubmit = () => {
+                const li = document.createElement('li');
+                const taskInput = document.createElement("input");
+                taskInput.type = "text";
+                taskInput.value = document.querySelector('#task').value;
+                taskInput.classList.add('task-edit');
+                taskInput.disabled = true;
+
+                const cb = document.createElement("INPUT");
+                cb.setAttribute("type", "checkbox");
+                cb.classList.add('task-checkbox');
+
+                const endCheckbox = document.createElement("INPUT");
+                endCheckbox.setAttribute("type", "checkbox");
+                endCheckbox.classList.add('end-checkbox');
+
+                const confirmButton = document.createElement("button");
+                confirmButton.classList.add('confirm-delete');
+                confirmButton.textContent = "Confirmar eliminación";
+
+                cb.addEventListener('change', () => {
+                    confirmButton.style.display = cb.checked ? 'inline' : 'none';
+                });
+
+                endCheckbox.addEventListener('change', () => {
+                    if (endCheckbox.checked) {
+                        taskInput.disabled = false;
+                        taskInput.focus();
+                    } else {
+                        if (taskInput.value.trim() !== '') {
+                            li.firstChild.nodeValue = taskInput.value;
+                        }
+                        taskInput.disabled = true;
+                    }
+                });
+
+                confirmButton.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    if (confirm("¿Estás seguro de que deseas eliminar esta tarea?")) {
+                        li.remove();
+                    }
+                });
+
+                li.appendChild(taskInput);
+                li.prepend(cb);
+                li.appendChild(endCheckbox);
+                li.appendChild(confirmButton);
+
+                document.querySelector('#tasks').append(li);
+                document.querySelector('#task').value = '';
+                return false;
+            };
+
+            document.querySelector('#hello-btn').onclick = () => {
+                alert('HOLA');
+            };
+
+            document.querySelector('#mark-all').onclick = () => {
+                const checkboxes = document.querySelectorAll('.task-checkbox');
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = true;
+                    checkbox.dispatchEvent(new Event('change'));
+                });
+            };
+
+            document.querySelector('#delete-all').onclick = () => {
+                if (confirm("¿Estás seguro de que deseas eliminar todas las tareas?")) {
+                    document.querySelector('#tasks').innerHTML = '';
+                }
+            };
+
+            document.querySelector('#task').focus();
+        });
+    </script>
+</head>
+
+<body>
+    <p>Computer Science</p>
+    <h1>Tasks</h1>
+    <form id="new-task">
+        <input id="task" autocomplete="on" autofocus placeholder="New Task" type="text">
+        <input type="submit">
+        <button id="delete-btn" type="button">Eliminar seleccionados</button>
+    </form>
+    <ol id="tasks">
+    </ol>
+
+    <div class="action-buttons">
+        <button id="mark-all" class="action-button">Marcar todas las casillas</button>
+        <button id="delete-all" class="action-button">Eliminar todas las tareas</button>
+    </div>
+
+    <button id="hello-btn">Mostrar Popup</button>
+</body>
+</html>
