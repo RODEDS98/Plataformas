@@ -1,0 +1,13 @@
+# Definimos la consulta 'hello'
+type Query {
+  HELLO: String!
+  greeting(name: String!): String!
+  getPerson(id: ID!): Person
+}
+
+# Definimos el tipo de persona
+type Person {
+  id: ID!
+  name: String!
+  age: Int!
+}
