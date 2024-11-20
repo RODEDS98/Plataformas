@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APLICACIONCV.MainPage">
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <!-- Título -->
+            <Label Text="Pruebas en Xamarin"
+                   FontSize="30"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start" />
+
+            <!-- Botones de Navegación -->
+            <Button Text="Ir a AbsoluteLayout Page"
+                    Clicked="OnAbsoluteLayoutPageClicked" />
+            <Button Text="Ir a GridLayout Page"
+                    Clicked="OnGridLayoutPageClicked" />
+            <Button Text="Ir a StackLayout Page"
+                    Clicked="OnStackLayoutPageClicked" />
+            <Button Text="Ir a CV Page"
+                    Clicked="OnCVPageClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
