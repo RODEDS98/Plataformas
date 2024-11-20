@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APLICACIONCV.Layouts.CVPage">
+
+    <ContentPage.Content>
+        <Grid Padding="20">
+            <!-- Definir las columnas: una para la izquierda y una para la derecha -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <!-- Columna izquierda más ancha -->
+                <ColumnDefinition Width="3*" />
+                <!-- Columna derecha más estrecha -->
+            </Grid.ColumnDefinitions>
+
+            <!-- Columna izquierda -->
+            <StackLayout Grid.Column="0">
+                <!-- Foto -->
+                <Image Source="foto.png" WidthRequest="100" HeightRequest="100" HorizontalOptions="Center" />
+                <Label Text="Edgard Edward Rodriguez Vilcapaza" FontSize="24" HorizontalOptions="Center" />
+                <Label Text="Developer" FontSize="20" HorizontalOptions="Center" />
+
+                <StackLayout Margin="0,20,0,0">
+                    <Label Text="CONTACTO" FontAttributes="Bold" />
+                    <Label Text="Arequipa, Peru" />
+                    <Label Text="Correo: edgard@example.com" />
+                    <Label Text="Teléfono: +51 123 456 789" />
+                    <Label Text="LinkedIn: linkedin.com/edgard" />
+                </StackLayout>
+
+                <StackLayout Margin="0,20,0,0">
+                    <Label Text="IDIOMAS" FontAttributes="Bold" />
+                    <Label Text="Español: Nativo" />
+                    <Label Text="Inglés: Avanzado" />
+                    <Label Text="Francés: Intermedio" />
+                </StackLayout>
+
+                <StackLayout Margin="0,20,0,0">
+                    <Label Text="APTITUDES" FontAttributes="Bold" />
+                    <Label Text="Acondicionamiento físico" />
+                    <Label Text="Creación de videos deportivos" />
+                    <Label Text="Pack office" />
+                    <Label Text="Tenis" />
+                </StackLayout>
+
+                <StackLayout Margin="0,20,0,0">
+                    <Label Text="OTROS INTERESES" FontAttributes="Bold" />
+                    <Label Text="Creador de yincanas" />
+                    <Label Text="Paseos ecológicos" />
+                    <Label Text="Lectura grupal en inglés" />
+                </StackLayout>
+            </StackLayout>
+
+            <!-- Columna derecha -->
+            <StackLayout Grid.Column="1">
+                <StackLayout Margin="0,0,0,20">
+                    <Label Text="PERFIL" FontAttributes="Bold" />
+                    <Label Text="Trabajador Social con 4 años de experiencia en proyectos colectivos. Mi objetivo es lograr que los jóvenes tengan acceso a la educación superior mediante logros deportivos." />
+                </StackLayout>
+
+                <StackLayout Margin="0,0,0,20">
+                    <Label Text="EXPERIENCIA LABORAL" FontAttributes="Bold" />
+                    <Label Text="Trabajador Social en México DF | 2022 - Actualidad" FontAttributes="Italic" />
+                    <Label Text="• Coordinador y mediador en ayuda psicológica a jóvenes." />
+                    <Label Text="• Velar por la salud mental del equipo." />
+                    <Label Text="• Mapeo de necesidades estratégicas." />
+                    <Label Text="• Monitor de ejercicios físicos para adolescentes." />
+                    <Label Text="Trabajador Social en México DF | 2020 - 2022" FontAttributes="Italic" />
+                    <Label Text="• Seguimiento de casos para jóvenes con adicciones." />
+                    <Label Text="• Capacitación en medidas preventivas." />
+                    <Label Text="• Recopilación de evidencias para auditorías." />
+                </StackLayout>
+
+                <StackLayout Margin="0,0,0,20">
+                    <Label Text="FORMACIÓN" FontAttributes="Bold" />
+                    <Label Text="Grado en Trabajo Social - ESMA | 2012 - 2015" FontAttributes="Italic" />
+                    <Label Text="Licenciatura en Trabajo Social - Universidad de la Frontera | 2011 - 2012" FontAttributes="Italic" />
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

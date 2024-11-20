@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APLICACIONCV.Layouts.StackLayoutPage">
+    <!-- Cambiado a StackLayoutPage -->
+
+    <StackLayout>
+        <!-- Primer StackLayout Horizontal -->
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Name:" />
+            <Entry Placeholder="Enter your name" />
+        </StackLayout>
+
+        <!-- Segundo StackLayout Horizontal -->
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Age:" />
+            <Entry Placeholder="Enter your age" />
+        </StackLayout>
+
+        <!-- Tercer StackLayout Horizontal -->
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Occupation:" />
+            <Entry Placeholder="Enter your occupation" />
+        </StackLayout>
+
+        <!-- Cuarto StackLayout Horizontal -->
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Address:" />
+            <Entry Placeholder="Enter your address" />
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

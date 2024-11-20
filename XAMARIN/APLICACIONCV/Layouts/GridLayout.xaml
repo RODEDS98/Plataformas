@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APLICACIONCV.Layouts.GridLayout">
+
+    <Grid>
+        <!-- Definición de filas -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+
+        <!-- Definición de columnas -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Añadiendo las Labels -->
+        <Label Text="One" Grid.Row="0" Grid.Column="0" TextColor="Green" BackgroundColor="Black" />
+        <Label Text="Xamarin Forms Grid Demo" Grid.Row="0" Grid.Column="1" TextColor="Yellow" BackgroundColor="Black" 
+               HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+        <Label Text="Xamarin Forms" Grid.Row="1" Grid.Column="0" TextColor="Blue" BackgroundColor="Yellow" 
+               HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+        <Label Text="C Sharp Corner" Grid.Row="1" Grid.Column="1" FontSize="Large" TextColor="Yellow" BackgroundColor="Red" 
+               HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+        <Label Text="Xamarin Forms" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" TextColor="Blue" BackgroundColor="Yellow" 
+               HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+        <Label Text="Cross Platform Development" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" TextColor="Blue" 
+               BackgroundColor="Yellow" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+        <Label Text="UWP Android Apple" Grid.Row="2" Grid.Column="2" TextColor="Red" BackgroundColor="Aqua" 
+               HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+    </Grid>
+
+</ContentPage>
